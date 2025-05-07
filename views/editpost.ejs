@@ -1,0 +1,8 @@
+<%- include('header') %>
+<form action="/edit" method="POST" class="post-form">
+    <input type="hidden" name="index" value="<%= index %>">
+    <input type="text" name="username" placeholder="Enter username" value="<%= post.user %>" required>
+    <textarea name="content" placeholder="Enter the content" required><%= post.content %></textarea>
+    <button type="submit">Update Post</button>
+</form>
+<%- include('footer') %>

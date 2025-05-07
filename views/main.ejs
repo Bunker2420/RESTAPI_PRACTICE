@@ -1,0 +1,28 @@
+<%- include('header')%>
+  
+<% posts.forEach((post, index) => { %>
+    <div class="post">
+      <h2>@<%= post.user %></h2>
+      <h3><%= post.content %></h3>
+      <div class="buttons">
+        <form action="/view" method="get">
+          <input type="hidden" name="index" value="<%= index %>">
+          <button type="submit">See in detail</button>
+        </form>
+        <form action="/edit" method="get">
+            <input type="hidden" name="index" value="<%= index %>">
+            <button type="submit">Edit Post</button>
+          </form>
+      </div>
+      <form action="/delete" method="POST">
+        <input type="hidden" name="index" value="<%= index %>">
+        <button class="delete-btn" type="submit">Delete Post</button>
+      </form>      
+    </div>
+  <% }); %>
+  
+  <button class="btn add">Add Post</button>
+  <script src="/main.js"></script>
+<%- include('footer')  %>
+</body>
+</html>

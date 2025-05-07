@@ -1,0 +1,18 @@
+<%- include('header') %>
+
+<div class="view-post">
+  <h2 class="view-title">Post Details</h2>
+  
+  <div class="post-details">
+    <p><strong>Written by:</strong> @<%= post.user %></p>
+    <p><strong>Content:</strong> <%= post.content %></p>
+    
+    <p class="thank-msg">Thank you for checking out this post. We appreciate your engagement!</p>
+    
+    <div class="post-actions">
+      <button onclick="window.location.href='/posts'">Go Back to Home</button>
+    </div>
+  </div>
+</div>
+
+<%- include('footer') %>
